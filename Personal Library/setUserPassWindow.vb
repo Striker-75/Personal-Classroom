@@ -1,4 +1,4 @@
-﻿Public Class Form2
+﻿Public Class setUserPassWindow
     'Setting the new username and password as long as its they new passwords arent null and close form
     Private Sub confirmButton_Click(sender As Object, e As EventArgs) Handles confirmButton.Click
         If String.IsNullOrEmpty(userBox.Text) Then
@@ -6,8 +6,8 @@
         ElseIf String.IsNullOrEmpty(passbox.Text) Then
             MsgBox("Missing Password")
         Else
-            Form1.teacher.setUsername(userBox.Text)
-            Form1.teacher.setPassword(passbox.Text)
+            mainWindow.teacher.setUsername(userBox.Text)
+            mainWindow.teacher.setPassword(passbox.Text)
             Me.Close()
         End If
     End Sub
@@ -17,7 +17,7 @@
     End Sub
     'load current username and password
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        userBox.Text = Form1.teacher.getUsername()
-        passbox.Text = Form1.teacher.getPassword()
+        userBox.Text = mainWindow.teacher.getUsername()
+        passbox.Text = mainWindow.teacher.getPassword()
     End Sub
 End Class

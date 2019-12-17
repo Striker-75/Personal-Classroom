@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class mainWindow
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -24,6 +24,8 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.circulationPage = New System.Windows.Forms.TabPage()
+        Me.currentlyAvailableLabel = New System.Windows.Forms.Label()
+        Me.currentAvaliable = New System.Windows.Forms.ListBox()
         Me.adminPage = New System.Windows.Forms.TabPage()
         Me.editBook = New System.Windows.Forms.Button()
         Me.incorrectLabel = New System.Windows.Forms.Label()
@@ -40,6 +42,7 @@ Partial Class Form1
         Me.inventoryList = New System.Windows.Forms.ListBox()
         Me.setUserPass = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
+        Me.circulationPage.SuspendLayout()
         Me.adminPage.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -55,6 +58,8 @@ Partial Class Form1
         '
         'circulationPage
         '
+        Me.circulationPage.Controls.Add(Me.currentlyAvailableLabel)
+        Me.circulationPage.Controls.Add(Me.currentAvaliable)
         Me.circulationPage.Location = New System.Drawing.Point(4, 22)
         Me.circulationPage.Name = "circulationPage"
         Me.circulationPage.Padding = New System.Windows.Forms.Padding(3)
@@ -62,6 +67,23 @@ Partial Class Form1
         Me.circulationPage.TabIndex = 1
         Me.circulationPage.Text = "Circulation"
         Me.circulationPage.UseVisualStyleBackColor = True
+        '
+        'currentlyAvailableLabel
+        '
+        Me.currentlyAvailableLabel.AutoSize = True
+        Me.currentlyAvailableLabel.Location = New System.Drawing.Point(161, 32)
+        Me.currentlyAvailableLabel.Name = "currentlyAvailableLabel"
+        Me.currentlyAvailableLabel.Size = New System.Drawing.Size(127, 13)
+        Me.currentlyAvailableLabel.TabIndex = 1
+        Me.currentlyAvailableLabel.Text = "Books Currently Available"
+        '
+        'currentAvaliable
+        '
+        Me.currentAvaliable.FormattingEnabled = True
+        Me.currentAvaliable.Location = New System.Drawing.Point(64, 61)
+        Me.currentAvaliable.Name = "currentAvaliable"
+        Me.currentAvaliable.Size = New System.Drawing.Size(325, 719)
+        Me.currentAvaliable.TabIndex = 0
         '
         'adminPage
         '
@@ -206,15 +228,17 @@ Partial Class Form1
         Me.setUserPass.Text = "Reset Username and Password"
         Me.setUserPass.UseVisualStyleBackColor = True
         '
-        'Form1
+        'mainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1254, 811)
         Me.Controls.Add(Me.TabControl1)
-        Me.Name = "Form1"
+        Me.Name = "mainWindow"
         Me.Text = "Moseley Classroom"
         Me.TabControl1.ResumeLayout(False)
+        Me.circulationPage.ResumeLayout(False)
+        Me.circulationPage.PerformLayout()
         Me.adminPage.ResumeLayout(False)
         Me.adminPage.PerformLayout()
         Me.ResumeLayout(False)
@@ -238,4 +262,6 @@ Partial Class Form1
     Friend WithEvents loginButton As Button
     Friend WithEvents incorrectLabel As Label
     Friend WithEvents editBook As Button
+    Friend WithEvents currentlyAvailableLabel As Label
+    Friend WithEvents currentAvaliable As ListBox
 End Class

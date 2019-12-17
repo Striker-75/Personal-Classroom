@@ -72,19 +72,25 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addBookWindow.Designer.vb">
+      <DependentUpon>addBookWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="addBookWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="admin.vb" />
     <Compile Include="Book.vb" />
-    <Compile Include="Form1.vb">
+    <Compile Include="mainWindow.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="mainWindow.Designer.vb">
+      <DependentUpon>mainWindow.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <Compile Include="setUserPassWindow.Designer.vb">
+      <DependentUpon>setUserPassWindow.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form2.vb">
+    <Compile Include="setUserPassWindow.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -104,11 +110,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="addBookWindow.resx">
+      <DependentUpon>addBookWindow.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <EmbeddedResource Include="mainWindow.resx">
+      <DependentUpon>mainWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="setUserPassWindow.resx">
+      <DependentUpon>setUserPassWindow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -118,6 +127,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

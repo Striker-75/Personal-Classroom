@@ -10,3 +10,16 @@ C:\Users\natem\Documents\College Stuff\GitHub Repositories\Christmas_2019\Person
 C:\Users\natem\Documents\College Stuff\GitHub Repositories\Christmas_2019\Personal Library\Personal Library\obj\Debug\Personal Library.xml
 C:\Users\natem\Documents\College Stuff\GitHub Repositories\Christmas_2019\Personal Library\Personal Library\obj\Debug\Personal Library.pdb
 C:\Users\natem\Documents\College Stuff\GitHub Repositories\Christmas_2019\Personal Library\Personal Library\obj\Debug\Personal_Library.Form2.resources
+C:\Users\natem\Documents\College Stuff\GitHub Repositories\Personal-Classroom\Personal Library\bin\Debug\Personal Library.exe.config
+C:\Users\natem\Documents\College Stuff\GitHub Repositories\Personal-Classroom\Personal Library\obj\Debug\Personal Library.exe
+C:\Users\natem\Documents\College Stuff\GitHub Repositories\Personal-Classroom\Personal Library\obj\Debug\Personal Library.xml
+C:\Users\natem\Documents\College Stuff\GitHub Repositories\Personal-Classroom\Personal Library\obj\Debug\Personal Library.pdb
+C:\Users\natem\Documents\College Stuff\GitHub Repositories\Personal-Classroom\Personal Library\obj\Debug\Personal Library.vbprojResolveAssemblyReference.cache
+C:\Users\natem\Documents\College Stuff\GitHub Repositories\Personal-Classroom\Personal Library\obj\Debug\Personal_Library.addBookWindow.resources
+C:\Users\natem\Documents\College Stuff\GitHub Repositories\Personal-Classroom\Personal Library\obj\Debug\Personal_Library.mainWindow.resources
+C:\Users\natem\Documents\College Stuff\GitHub Repositories\Personal-Classroom\Personal Library\obj\Debug\Personal_Library.setUserPassWindow.resources
+C:\Users\natem\Documents\College Stuff\GitHub Repositories\Personal-Classroom\Personal Library\obj\Debug\Personal_Library.Resources.resources
+C:\Users\natem\Documents\College Stuff\GitHub Repositories\Personal-Classroom\Personal Library\obj\Debug\Personal Library.vbproj.GenerateResource.Cache
+C:\Users\natem\Documents\College Stuff\GitHub Repositories\Personal-Classroom\Personal Library\bin\Debug\Personal Library.exe
+C:\Users\natem\Documents\College Stuff\GitHub Repositories\Personal-Classroom\Personal Library\bin\Debug\Personal Library.pdb
+C:\Users\natem\Documents\College Stuff\GitHub Repositories\Personal-Classroom\Personal Library\bin\Debug\Personal Library.xml
