@@ -23,3 +23,5 @@ C:\Users\natem\Documents\College Stuff\GitHub Repositories\Personal-Classroom\Pe
 C:\Users\natem\Documents\College Stuff\GitHub Repositories\Personal-Classroom\Personal Library\bin\Debug\Personal Library.exe
 C:\Users\natem\Documents\College Stuff\GitHub Repositories\Personal-Classroom\Personal Library\bin\Debug\Personal Library.pdb
 C:\Users\natem\Documents\College Stuff\GitHub Repositories\Personal-Classroom\Personal Library\bin\Debug\Personal Library.xml
+C:\Users\natem\Documents\College Stuff\GitHub Repositories\Personal-Classroom\Personal Library\obj\Debug\Personal_Library.editBookWindow.resources
+C:\Users\natem\Documents\College Stuff\GitHub Repositories\Personal-Classroom\Personal Library\obj\Debug\Personal_Library.addStudentWindow.resources

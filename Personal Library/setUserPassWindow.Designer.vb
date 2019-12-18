@@ -32,55 +32,61 @@ Partial Class setUserPassWindow
         '
         'confirmButton
         '
-        Me.confirmButton.Location = New System.Drawing.Point(12, 222)
+        Me.confirmButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.confirmButton.Location = New System.Drawing.Point(12, 223)
         Me.confirmButton.Name = "confirmButton"
-        Me.confirmButton.Size = New System.Drawing.Size(75, 23)
+        Me.confirmButton.Size = New System.Drawing.Size(73, 35)
         Me.confirmButton.TabIndex = 0
         Me.confirmButton.Text = "Confirm"
         Me.confirmButton.UseVisualStyleBackColor = True
         '
         'cancelButton
         '
-        Me.cancelButton.Location = New System.Drawing.Point(221, 222)
+        Me.cancelButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cancelButton.Location = New System.Drawing.Point(221, 223)
         Me.cancelButton.Name = "cancelButton"
-        Me.cancelButton.Size = New System.Drawing.Size(75, 23)
+        Me.cancelButton.Size = New System.Drawing.Size(75, 35)
         Me.cancelButton.TabIndex = 1
         Me.cancelButton.Text = "Cancel"
         Me.cancelButton.UseVisualStyleBackColor = True
         '
         'passbox
         '
-        Me.passbox.Location = New System.Drawing.Point(12, 136)
+        Me.passbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.passbox.Location = New System.Drawing.Point(12, 137)
         Me.passbox.Name = "passbox"
-        Me.passbox.Size = New System.Drawing.Size(284, 20)
+        Me.passbox.Size = New System.Drawing.Size(284, 26)
         Me.passbox.TabIndex = 2
         '
         'userBox
         '
-        Me.userBox.Location = New System.Drawing.Point(12, 64)
+        Me.userBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.userBox.Location = New System.Drawing.Point(12, 65)
         Me.userBox.Name = "userBox"
-        Me.userBox.Size = New System.Drawing.Size(284, 20)
+        Me.userBox.Size = New System.Drawing.Size(284, 26)
         Me.userBox.TabIndex = 3
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(126, 35)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(110, 42)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(55, 13)
+        Me.Label1.Size = New System.Drawing.Size(83, 20)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Username"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(126, 110)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(115, 114)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(53, 13)
+        Me.Label2.Size = New System.Drawing.Size(78, 20)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Password"
         '
-        'Form2
+        'setUserPassWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -91,7 +97,7 @@ Partial Class setUserPassWindow
         Me.Controls.Add(Me.passbox)
         Me.Controls.Add(Me.cancelButton)
         Me.Controls.Add(Me.confirmButton)
-        Me.Name = "Form2"
+        Me.Name = "setUserPassWindow"
         Me.Text = "Set New Username and Pasword"
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -78,8 +78,20 @@
     <Compile Include="addBookWindow.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="addStudentWindow.Designer.vb">
+      <DependentUpon>addStudentWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="addStudentWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="admin.vb" />
     <Compile Include="Book.vb" />
+    <Compile Include="editBookWindow.Designer.vb">
+      <DependentUpon>editBookWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="editBookWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="mainWindow.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +124,12 @@
   <ItemGroup>
     <EmbeddedResource Include="addBookWindow.resx">
       <DependentUpon>addBookWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addStudentWindow.resx">
+      <DependentUpon>addStudentWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editBookWindow.resx">
+      <DependentUpon>editBookWindow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainWindow.resx">
       <DependentUpon>mainWindow.vb</DependentUpon>
