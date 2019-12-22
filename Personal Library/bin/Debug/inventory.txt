@@ -1,4 +1,1 @@
-deroderant,gillette,047400307308
-yoshi,nintendo,045496593919
-luigi,nintendo,045496596408
-scanner,nadamoo,X0014B4I71
+

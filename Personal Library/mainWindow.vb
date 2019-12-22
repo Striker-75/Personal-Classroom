@@ -3,9 +3,6 @@
     Friend teacher As New admin
     'Admin page functionality, hide everything until valid login
     Private Sub TabControl1_Selected(sender As Object, e As System.Windows.Forms.TabControlEventArgs) Handles TabControl1.Selected
-        userField.Text = "a"
-        passwordField.Text = "a"
-
         setUserPass.Visible = False
         setUserPass.Enabled = False
         inventoryList.Visible = False

@@ -18,7 +18,6 @@
             If mainWindow.notAvaliable.Items(x).getISBN() = barcode.Text Then
                 mainWindow.currentAvaliable.Items.Add(mainWindow.notAvaliable.Items(x))
                 value = x
-                MsgBox(mainWindow.notAvaliable.Items(value).ToString())
             End If
         Next
         For Each item As ListViewItem In mainWindow.adminCheckOutList.Items
