@@ -24,9 +24,21 @@ Partial Class mainWindow
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.circulationPage = New System.Windows.Forms.TabPage()
+        Me.barcodeCheckOut = New System.Windows.Forms.Button()
+        Me.barcodeSearch = New System.Windows.Forms.Button()
+        Me.barcodeBox = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.searchCheckOut = New System.Windows.Forms.Button()
+        Me.searchButton = New System.Windows.Forms.Button()
+        Me.searchBox = New System.Windows.Forms.TextBox()
         Me.currentlyAvailableLabel = New System.Windows.Forms.Label()
         Me.currentAvaliable = New System.Windows.Forms.ListBox()
         Me.adminPage = New System.Windows.Forms.TabPage()
+        Me.editStudent = New System.Windows.Forms.Button()
+        Me.addStudent = New System.Windows.Forms.Button()
+        Me.studentListLabel = New System.Windows.Forms.Label()
+        Me.studentList = New System.Windows.Forms.ListBox()
         Me.adminCheckOutList = New System.Windows.Forms.ListView()
         Me.editBook = New System.Windows.Forms.Button()
         Me.incorrectLabel = New System.Windows.Forms.Label()
@@ -40,10 +52,9 @@ Partial Class mainWindow
         Me.adminInventoryLabel = New System.Windows.Forms.Label()
         Me.inventoryList = New System.Windows.Forms.ListBox()
         Me.setUserPass = New System.Windows.Forms.Button()
-        Me.studentList = New System.Windows.Forms.ListBox()
-        Me.studentListLabel = New System.Windows.Forms.Label()
-        Me.addStudent = New System.Windows.Forms.Button()
-        Me.editStudent = New System.Windows.Forms.Button()
+        Me.notAvaliable = New System.Windows.Forms.ListBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.checkIn = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.circulationPage.SuspendLayout()
         Me.adminPage.SuspendLayout()
@@ -62,6 +73,17 @@ Partial Class mainWindow
         '
         'circulationPage
         '
+        Me.circulationPage.Controls.Add(Me.checkIn)
+        Me.circulationPage.Controls.Add(Me.Label3)
+        Me.circulationPage.Controls.Add(Me.notAvaliable)
+        Me.circulationPage.Controls.Add(Me.barcodeCheckOut)
+        Me.circulationPage.Controls.Add(Me.barcodeSearch)
+        Me.circulationPage.Controls.Add(Me.barcodeBox)
+        Me.circulationPage.Controls.Add(Me.Label2)
+        Me.circulationPage.Controls.Add(Me.Label1)
+        Me.circulationPage.Controls.Add(Me.searchCheckOut)
+        Me.circulationPage.Controls.Add(Me.searchButton)
+        Me.circulationPage.Controls.Add(Me.searchBox)
         Me.circulationPage.Controls.Add(Me.currentlyAvailableLabel)
         Me.circulationPage.Controls.Add(Me.currentAvaliable)
         Me.circulationPage.Location = New System.Drawing.Point(4, 29)
@@ -71,6 +93,74 @@ Partial Class mainWindow
         Me.circulationPage.TabIndex = 1
         Me.circulationPage.Text = "Circulation"
         Me.circulationPage.UseVisualStyleBackColor = True
+        '
+        'barcodeCheckOut
+        '
+        Me.barcodeCheckOut.Location = New System.Drawing.Point(668, 263)
+        Me.barcodeCheckOut.Name = "barcodeCheckOut"
+        Me.barcodeCheckOut.Size = New System.Drawing.Size(113, 29)
+        Me.barcodeCheckOut.TabIndex = 9
+        Me.barcodeCheckOut.Text = "Check Out"
+        Me.barcodeCheckOut.UseVisualStyleBackColor = True
+        '
+        'barcodeSearch
+        '
+        Me.barcodeSearch.Location = New System.Drawing.Point(489, 263)
+        Me.barcodeSearch.Name = "barcodeSearch"
+        Me.barcodeSearch.Size = New System.Drawing.Size(111, 29)
+        Me.barcodeSearch.TabIndex = 8
+        Me.barcodeSearch.Text = "Search"
+        Me.barcodeSearch.UseVisualStyleBackColor = True
+        '
+        'barcodeBox
+        '
+        Me.barcodeBox.Location = New System.Drawing.Point(489, 231)
+        Me.barcodeBox.Name = "barcodeBox"
+        Me.barcodeBox.Size = New System.Drawing.Size(292, 26)
+        Me.barcodeBox.TabIndex = 7
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(568, 208)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(126, 20)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "Barcode Lookup"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(581, 61)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(113, 20)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Search by Title"
+        '
+        'searchCheckOut
+        '
+        Me.searchCheckOut.Location = New System.Drawing.Point(668, 142)
+        Me.searchCheckOut.Name = "searchCheckOut"
+        Me.searchCheckOut.Size = New System.Drawing.Size(113, 31)
+        Me.searchCheckOut.TabIndex = 4
+        Me.searchCheckOut.Text = "Check Out"
+        Me.searchCheckOut.UseVisualStyleBackColor = True
+        '
+        'searchButton
+        '
+        Me.searchButton.Location = New System.Drawing.Point(489, 143)
+        Me.searchButton.Name = "searchButton"
+        Me.searchButton.Size = New System.Drawing.Size(111, 30)
+        Me.searchButton.TabIndex = 3
+        Me.searchButton.Text = "Search"
+        Me.searchButton.UseVisualStyleBackColor = True
+        '
+        'searchBox
+        '
+        Me.searchBox.Location = New System.Drawing.Point(489, 91)
+        Me.searchBox.Name = "searchBox"
+        Me.searchBox.Size = New System.Drawing.Size(292, 26)
+        Me.searchBox.TabIndex = 2
         '
         'currentlyAvailableLabel
         '
@@ -119,12 +209,48 @@ Partial Class mainWindow
         Me.adminPage.Text = "Admin"
         Me.adminPage.UseVisualStyleBackColor = True
         '
+        'editStudent
+        '
+        Me.editStudent.Location = New System.Drawing.Point(598, 83)
+        Me.editStudent.Name = "editStudent"
+        Me.editStudent.Size = New System.Drawing.Size(111, 28)
+        Me.editStudent.TabIndex = 19
+        Me.editStudent.Text = "Edit Student"
+        Me.editStudent.UseVisualStyleBackColor = True
+        '
+        'addStudent
+        '
+        Me.addStudent.Location = New System.Drawing.Point(598, 38)
+        Me.addStudent.Name = "addStudent"
+        Me.addStudent.Size = New System.Drawing.Size(111, 33)
+        Me.addStudent.TabIndex = 18
+        Me.addStudent.Text = "Add Student"
+        Me.addStudent.UseVisualStyleBackColor = True
+        '
+        'studentListLabel
+        '
+        Me.studentListLabel.AutoSize = True
+        Me.studentListLabel.Location = New System.Drawing.Point(438, 13)
+        Me.studentListLabel.Name = "studentListLabel"
+        Me.studentListLabel.Size = New System.Drawing.Size(74, 20)
+        Me.studentListLabel.TabIndex = 17
+        Me.studentListLabel.Text = "Students"
+        '
+        'studentList
+        '
+        Me.studentList.FormattingEnabled = True
+        Me.studentList.ItemHeight = 20
+        Me.studentList.Location = New System.Drawing.Point(399, 38)
+        Me.studentList.Name = "studentList"
+        Me.studentList.Size = New System.Drawing.Size(161, 724)
+        Me.studentList.TabIndex = 16
+        '
         'adminCheckOutList
         '
         Me.adminCheckOutList.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.adminCheckOutList.Location = New System.Drawing.Point(814, 65)
         Me.adminCheckOutList.Name = "adminCheckOutList"
-        Me.adminCheckOutList.Size = New System.Drawing.Size(225, 697)
+        Me.adminCheckOutList.Size = New System.Drawing.Size(425, 697)
         Me.adminCheckOutList.TabIndex = 15
         Me.adminCheckOutList.UseCompatibleStateImageBehavior = False
         '
@@ -244,41 +370,32 @@ Partial Class mainWindow
         Me.setUserPass.Text = "Reset Username and Password"
         Me.setUserPass.UseVisualStyleBackColor = True
         '
-        'studentList
+        'notAvaliable
         '
-        Me.studentList.FormattingEnabled = True
-        Me.studentList.ItemHeight = 20
-        Me.studentList.Location = New System.Drawing.Point(399, 38)
-        Me.studentList.Name = "studentList"
-        Me.studentList.Size = New System.Drawing.Size(161, 724)
-        Me.studentList.TabIndex = 16
+        Me.notAvaliable.FormattingEnabled = True
+        Me.notAvaliable.ItemHeight = 20
+        Me.notAvaliable.Location = New System.Drawing.Point(883, 61)
+        Me.notAvaliable.Name = "notAvaliable"
+        Me.notAvaliable.Size = New System.Drawing.Size(325, 704)
+        Me.notAvaliable.TabIndex = 10
         '
-        'studentListLabel
+        'Label3
         '
-        Me.studentListLabel.AutoSize = True
-        Me.studentListLabel.Location = New System.Drawing.Point(438, 13)
-        Me.studentListLabel.Name = "studentListLabel"
-        Me.studentListLabel.Size = New System.Drawing.Size(74, 20)
-        Me.studentListLabel.TabIndex = 17
-        Me.studentListLabel.Text = "Students"
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(944, 22)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(215, 20)
+        Me.Label3.TabIndex = 11
+        Me.Label3.Text = "Books That Are Not Avaliable"
         '
-        'addStudent
+        'checkIn
         '
-        Me.addStudent.Location = New System.Drawing.Point(598, 38)
-        Me.addStudent.Name = "addStudent"
-        Me.addStudent.Size = New System.Drawing.Size(111, 33)
-        Me.addStudent.TabIndex = 18
-        Me.addStudent.Text = "Add Student"
-        Me.addStudent.UseVisualStyleBackColor = True
-        '
-        'editStudent
-        '
-        Me.editStudent.Location = New System.Drawing.Point(598, 83)
-        Me.editStudent.Name = "editStudent"
-        Me.editStudent.Size = New System.Drawing.Size(111, 28)
-        Me.editStudent.TabIndex = 19
-        Me.editStudent.Text = "Edit Student"
-        Me.editStudent.UseVisualStyleBackColor = True
+        Me.checkIn.Location = New System.Drawing.Point(489, 360)
+        Me.checkIn.Name = "checkIn"
+        Me.checkIn.Size = New System.Drawing.Size(292, 33)
+        Me.checkIn.TabIndex = 12
+        Me.checkIn.Text = "Check In Books"
+        Me.checkIn.UseVisualStyleBackColor = True
         '
         'mainWindow
         '
@@ -319,4 +436,15 @@ Partial Class mainWindow
     Friend WithEvents addStudent As Button
     Friend WithEvents studentListLabel As Label
     Friend WithEvents studentList As ListBox
+    Friend WithEvents searchButton As Button
+    Friend WithEvents searchBox As TextBox
+    Friend WithEvents searchCheckOut As Button
+    Friend WithEvents barcodeCheckOut As Button
+    Friend WithEvents barcodeSearch As Button
+    Friend WithEvents barcodeBox As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents notAvaliable As ListBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents checkIn As Button
 End Class

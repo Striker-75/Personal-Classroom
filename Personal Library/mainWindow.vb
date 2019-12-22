@@ -65,7 +65,8 @@
             addStudent.Visible = True
             addStudent.Enabled = True
             editStudent.Visible = True
-            editStudent.Enabled = True
+            studentListLabel.Visible = True
+            studentListLabel.Enabled = True
 
             loginButton.Visible = False
             loginButton.Enabled = False
@@ -127,19 +128,48 @@
         Dim stuData() As Byte
         For Each stu As Student In studentList.Items
             stuData = System.Text.Encoding.ASCII.GetBytes(stu.outputData())
-            avaliable.Write(stuData, 0, stuData.Length)
+            people.Write(stuData, 0, stuData.Length)
             stuData = System.Text.Encoding.ASCII.GetBytes(Environment.NewLine)
-            avaliable.Write(stuData, 0, stuData.Length)
+            people.Write(stuData, 0, stuData.Length)
         Next
         people.Close()
+        'output not avaliable data
+        Dim out As System.IO.FileStream = New IO.FileStream("out.txt", IO.FileMode.Create)
+        Dim nonAva() As Byte
+        For Each boo As Book In notAvaliable.Items
+            nonAva = System.Text.Encoding.ASCII.GetBytes(boo.outputData())
+            out.Write(nonAva, 0, nonAva.Length)
+            nonAva = System.Text.Encoding.ASCII.GetBytes(Environment.NewLine)
+            out.Write(nonAva, 0, nonAva.Length)
+        Next
+        out.Close()
+        'output admin list
+        Dim admin As System.IO.FileStream = New IO.FileStream("adminList.txt", IO.FileMode.Create)
+        Dim adminData() As Byte
+        For Each item As ListViewItem In adminCheckOutList.Items
+            adminData = System.Text.Encoding.ASCII.GetBytes(item.SubItems(0).Text)
+            admin.Write(adminData, 0, adminData.Length)
+            adminData = System.Text.Encoding.ASCII.GetBytes(":")
+            admin.Write(adminData, 0, adminData.Length)
+            adminData = System.Text.Encoding.ASCII.GetBytes(item.SubItems(1).Text)
+            admin.Write(adminData, 0, adminData.Length)
+            adminData = System.Text.Encoding.ASCII.GetBytes(Environment.NewLine)
+            admin.Write(adminData, 0, adminData.Length)
+        Next
+        admin.Close()
     End Sub
     'initilize data on from data on start
     Private Sub mainWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'initilize checkedout list
         With adminCheckOutList
-            .Columns.Add("Book")
-            .Columns.Add("Student")
+            .Columns.Add("Student").Width = 200
+            .Columns.Add("Book").Width = 200
         End With
+        adminCheckOutList.View = View.Details
+        'disable checkout buttons
+        searchCheckOut.Enabled = False
+        barcodeCheckOut.Enabled = False
+
         'initilize login data
         teacher.loadData("login.txt")
         'read in inventory list
@@ -168,6 +198,18 @@
             End If
         End While
         avaliable.Close()
+        'read in not avaliable data
+        Dim nonAva As System.IO.TextReader = New IO.StreamReader("out.txt")
+        While True
+            line = nonAva.ReadLine()
+            If Not line Is Nothing Then
+                bookData = line.Split(",")
+                notAvaliable.Items.Add(New Book(bookData(0), bookData(1), bookData(2)))
+            Else
+                Exit While
+            End If
+        End While
+        nonAva.Close()
         'read in current students
         Dim studentData As String()
         Dim people As System.IO.TextReader = New IO.StreamReader("students.txt")
@@ -175,12 +217,25 @@
             line = people.ReadLine()
             If Not line Is Nothing Then
                 studentData = line.Split(",")
-                currentAvaliable.Items.Add(New Student(studentData(0), studentData(1), studentData(2)))
+                studentList.Items.Add(New Student(studentData(0), studentData(1), studentData(2)))
             Else
                 Exit While
             End If
         End While
         people.Close()
+        'read in admin list
+        Dim listData As String()
+        Dim checked As System.IO.TextReader = New IO.StreamReader("adminList.txt")
+        While True
+            line = checked.ReadLine()
+            If Not line Is Nothing Then
+                listData = line.Split(":")
+                adminCheckOutList.Items.Add(New ListViewItem({listData(0), listData(1)}))
+            Else
+                Exit While
+            End If
+        End While
+        checked.Close()
     End Sub
 
     'opens a window to add a book
@@ -204,5 +259,85 @@
         Dim addStudent As Form
         addStudent = New addStudentWindow
         addStudent.Show()
+    End Sub
+    'whenever a student is selected
+    Private Sub studentList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles studentList.SelectedIndexChanged
+        editStudent.Enabled = True
+    End Sub
+    'opens up window to edit student
+    Private Sub editStudent_Click(sender As Object, e As EventArgs) Handles editStudent.Click
+        Dim editStudent As Form
+        editStudent = New editStudentWindow
+        editStudent.Show()
+    End Sub
+    'search the avaliable titles for title
+    Private Sub searchButton_Click(sender As Object, e As EventArgs) Handles searchButton.Click
+        If String.IsNullOrEmpty(searchBox.Text) Then
+            MsgBox("Must input a title")
+        Else
+            For x As Integer = 0 To currentAvaliable.Items.Count - 1
+                If currentAvaliable.Items(x).getTitle().ToUpper = searchBox.Text.ToUpper Then
+                    currentAvaliable.SelectedItem = currentAvaliable.Items(x)
+                End If
+            Next
+        End If
+        If Not currentAvaliable.SelectedIndex = -1 Then
+            searchCheckOut.Enabled = True
+        Else
+            MsgBox("That book is unavaliable or doesn't exist")
+        End If
+    End Sub
+    'when a barcode is inputted it is searched for in the avaliable books
+    Private Sub barcodeSearch_Click(sender As Object, e As EventArgs) Handles barcodeSearch.Click
+        If String.IsNullOrEmpty(barcodeBox.Text) Then
+            MsgBox("Invalid Barcode")
+        Else
+            For x As Integer = 0 To currentAvaliable.Items.Count - 1
+                If currentAvaliable.Items(x).getISBN() = barcodeBox.Text Then
+                    currentAvaliable.SelectedItem = currentAvaliable.Items(x)
+                End If
+            Next
+        End If
+        If Not currentAvaliable.SelectedIndex = -1 Then
+            barcodeCheckOut.Enabled = True
+        Else
+            MsgBox("That book is unavaliable or doesn't exist")
+        End If
+    End Sub
+    'handles both check out buttons and launches checkout window
+    Private Sub searchCheckOut_Click(sender As Object, e As EventArgs) Handles searchCheckOut.Click, barcodeCheckOut.Click
+        Dim checkOut As Form
+        checkOut = New checkOutWindow
+        checkOut.Show()
+    End Sub
+    'clear selected when cliking somewhere that isnt edittable
+    Private Sub circulationPage_Click(sender As Object, e As EventArgs) Handles circulationPage.Click
+        currentAvaliable.ClearSelected()
+        barcodeCheckOut.Enabled = False
+        barcodeBox.Clear()
+        searchCheckOut.Enabled = False
+        searchBox.Clear()
+    End Sub
+    'enable check out if a book is selected
+    Private Sub currentAvaliable_SelectedIndexChanged(sender As Object, e As EventArgs) Handles currentAvaliable.SelectedIndexChanged
+        barcodeCheckOut.Enabled = True
+        searchCheckOut.Enabled = True
+    End Sub
+    'launch check in book window
+    Private Sub checkIn_Click(sender As Object, e As EventArgs) Handles checkIn.Click
+        Dim checkIn As Form
+        checkIn = New checkInWindow
+        checkIn.Show()
+    End Sub
+    'cant select these items
+    Private Sub notAvaliable_SelectedIndexChanged(sender As Object, e As EventArgs) Handles notAvaliable.SelectedIndexChanged
+        notAvaliable.ClearSelected()
+    End Sub
+    'clear selected
+    Private Sub adminPage_Click(sender As Object, e As EventArgs) Handles adminPage.Click
+        studentList.ClearSelected()
+        inventoryList.ClearSelected()
+        editBook.Enabled = False
+        editStudent.Enabled = False
     End Sub
 End Class

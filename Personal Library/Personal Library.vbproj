@@ -86,10 +86,28 @@
     </Compile>
     <Compile Include="admin.vb" />
     <Compile Include="Book.vb" />
+    <Compile Include="checkInWindow.Designer.vb">
+      <DependentUpon>checkInWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="checkInWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="checkOutWindow.Designer.vb">
+      <DependentUpon>checkOutWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="checkOutWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="editBookWindow.Designer.vb">
       <DependentUpon>editBookWindow.vb</DependentUpon>
     </Compile>
     <Compile Include="editBookWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editStudentWindow.Designer.vb">
+      <DependentUpon>editStudentWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="editStudentWindow.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mainWindow.vb">
@@ -120,6 +138,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Student.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="addBookWindow.resx">
@@ -128,8 +147,17 @@
     <EmbeddedResource Include="addStudentWindow.resx">
       <DependentUpon>addStudentWindow.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="checkInWindow.resx">
+      <DependentUpon>checkInWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="checkOutWindow.resx">
+      <DependentUpon>checkOutWindow.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="editBookWindow.resx">
       <DependentUpon>editBookWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editStudentWindow.resx">
+      <DependentUpon>editStudentWindow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainWindow.resx">
       <DependentUpon>mainWindow.vb</DependentUpon>
